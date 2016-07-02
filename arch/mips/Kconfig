@@ -1578,6 +1578,7 @@ config CPU_LOONGSON1B
 	default y if SYS_HAS_CPU_LOONGSON1B
 
 config CPU_LOONGSON1C
+	select USE_OF
 	bool
 	default y if SYS_HAS_CPU_LOONGSON1C
 

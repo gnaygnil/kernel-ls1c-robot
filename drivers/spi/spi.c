@@ -1827,8 +1827,10 @@ int spi_setup(struct spi_device *spi)
 		bad_bits &= ~ugly_bits;
 	}
 	if (bad_bits) {
+#ifndef CONFIG_CPU_LOONGSON1C
 		dev_err(&spi->dev, "setup: unsupported mode bits %x\n",
 			bad_bits);
+#endif
 		return -EINVAL;
 	}
 

@@ -79,6 +79,10 @@ config LS1C_CBII_V0A_BOARD
 config LS1C_CBV0B_BOARD
 	bool "LS1C_CB_V0B board (ls1c300a)"
 	select LOONGSON1_LS1C300A
+
+config LS1C_OPENLOONGSON_ROBOT_BOARD
+	bool "openloongson robot ctrl board (ls1c300a)"
+	select LOONGSON1_LS1C300A
 endchoice
 
 config LOONGSON1_LS1C300A
@@ -89,5 +93,35 @@ config LOONGSON1_LS1C300B
 endif
 
 endchoice
+
+
+
+config PWM_LS1X
+	tristate "Loongson1 PWM support"
+	select HAVE_PWM
+	help
+	  Generic PWM framework driver for Loongson1.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called pwm-ls1x.
+
+config PWM_LS1X_PWM0
+	bool "PWM0 support"
+	depends on PWM_LS1X
+
+config PWM_LS1X_PWM1
+	bool "PWM1 support"
+	depends on PWM_LS1X
+
+config PWM_LS1X_PWM2
+	bool "PWM2 support"
+	depends on PWM_LS1X
+
+config PWM_LS1X_PWM3
+	bool "PWM3 support"
+	depends on PWM_LS1X
+
+config HAVE_PWM
+	bool
 
 endif # MACH_LOONGSON1

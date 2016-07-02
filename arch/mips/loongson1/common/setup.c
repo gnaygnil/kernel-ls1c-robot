@@ -33,3 +33,5 @@ const char *get_system_type(void)
 		return "LOONGSON (unknown)";
 	}
 }
+
+void device_tree_init(void) { }
